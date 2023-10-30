@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./build",
     "baseUrl": ".",
-    // Hack to get @types working for newer version of puppeteer
+    "module": "es2022",
+    "moduleResolution": "Node",
+    "target": "es2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2022"
+    ],
     "paths": {
       "puppeteer": ["node_modules/@types/puppeteer"]
     },
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es2017",
-    "lib": [
-      "dom",
-      "es7"
-    ],
-    "removeComments": true,
+    "strict": true,
+    "removeComments": false,
     "noImplicitAny": true,
-    "inlineSourceMap": true,
     "noEmitOnError": false,
     "strictNullChecks": true,
     "noImplicitReturns": true,
@@ -22,9 +24,9 @@
     "noUnusedParameters": true,
     "declaration": true,
     "esModuleInterop": true,
-    "outDir": "./build",
-    "rootDir": "./src",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "./src/tests/*"
